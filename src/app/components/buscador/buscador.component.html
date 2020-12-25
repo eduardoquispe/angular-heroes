@@ -1,0 +1,16 @@
+<h1>Resultado de busqueda: {{ terminoBuscador }} </h1>
+<hr>
+
+<div class="card-columns" *ngIf="heroes.length > 0">
+  <app-heroe-tarjeta 
+    *ngFor="let heroe of heroes; let i = index"
+    (heroeSeleccionado)="verHeroe($event)"
+    [heroe]="heroe"
+    [index]="i"
+  >
+  </app-heroe-tarjeta>
+</div>
+
+<div *ngIf="heroes.length === 0" class="alert alert-primary" role="alert">
+  No se encontraron resultados.
+</div>

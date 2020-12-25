@@ -1,0 +1,16 @@
+<div class="card mb-3 p-3" style="width: 100%;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{ heroe.img }}" class="card-img" alt="...">
+      <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block my-2">Regresar</a>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title font-weight-bold">{{ heroe.nombre | uppercase }} <small class="text-muted">({{ heroe.aparicion | date:'y' }})</small></h5>
+        <p class="card-text">{{ heroe.bio }}</p>
+        <img class='img-heroe' *ngIf="heroe.casa === 'DC'" src="assets/img/dc-logo.jpg" alt="">
+        <img class='img-heroe' *ngIf="heroe.casa === 'Marvel'" src="assets/img/marvel-logo.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
